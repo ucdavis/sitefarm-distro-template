@@ -12,7 +12,7 @@ distribution:
 base profile: sitefarm_seed
 
 # Required modules
-dependencies:
+# dependencies:
   # core
   # contrib
   # SiteFarm
