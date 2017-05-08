@@ -4,7 +4,7 @@ services.local.yml
 
 # Ignore non-custom parts of Drupal.
 /web/core
-/web/profiles
+/web/profiles/sitefarm_seed
 /web/modules/contrib
 /web/themes/contrib
 /web/sites/default/default.settings.php
