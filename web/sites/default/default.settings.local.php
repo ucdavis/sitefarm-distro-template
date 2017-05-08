@@ -130,11 +130,6 @@ $settings['css_link_tags'] = TRUE;
 $settings['hash_salt'] = 'S8hk3uuCAW46j8VxXtM_J6NAmKT7Vb9gXzyDRoncKgd2LqxIII5mh9j0tJTn-E9qrUqIL5ETDA';
 
 /**
- * Declare the Install Profile being used
- */
-$settings['install_profile'] = 'sitefarm';
-
-/**
  * Save emails to file
  * This requires the Devel module to be enabled
  */
