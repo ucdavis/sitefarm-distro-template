@@ -19,3 +19,4 @@ base profile: sitefarm_seed
 
 themes:
   - seven
+  - bartik
