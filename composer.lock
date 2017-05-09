@@ -1085,33 +1085,13 @@
             },
             "type": "drupal-module",
             "extra": {
-                "installer-paths": {
-                    "web/core": [
-                        "drupal/core"
-                    ],
-                    "web/modules/contrib/{$name}": [
-                        "type:drupal-module"
-                    ],
-                    "web/modules/custom/{$name}": [
-                        "type:drupal-custom-module"
-                    ],
-                    "web/profiles/{$name}": [
-                        "type:drupal-profile"
-                    ],
-                    "web/libraries/{$name}": [
-                        "type:drupal-library"
-                    ],
-                    "web/themes/contrib/{$name}": [
-                        "type:drupal-theme"
-                    ],
-                    "web/themes/custom/{$name}": [
-                        "type:drupal-custom-theme"
-                    ],
-                    "drush/contrib/{$name}": [
-                        "type:drupal-drush"
-                    ]
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
                 },
-                "enable-patching": true
+                "drupal": {
+                    "version": "8.x-1.0-beta2+2-dev",
+                    "datestamp": "1493779095"
+                }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
@@ -4074,16 +4054,16 @@
         },
         {
             "name": "symfony-cmf/routing",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony-cmf/Routing.git",
-                "reference": "b93704ca098334f56e9b317932f21a4362e620db"
+                "url": "https://github.com/symfony-cmf/routing.git",
+                "reference": "fb1e7f85ff8c6866238b7e73a490a0a0243ae8ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/Routing/zipball/b93704ca098334f56e9b317932f21a4362e620db",
-                "reference": "b93704ca098334f56e9b317932f21a4362e620db",
+                "url": "https://api.github.com/repos/symfony-cmf/routing/zipball/fb1e7f85ff8c6866238b7e73a490a0a0243ae8ac",
+                "reference": "fb1e7f85ff8c6866238b7e73a490a0a0243ae8ac",
                 "shasum": ""
             },
             "require": {
@@ -4129,7 +4109,7 @@
                 "database",
                 "routing"
             ],
-            "time": "2016-03-31T09:11:39+00:00"
+            "time": "2017-05-09T08:10:41+00:00"
         },
         {
             "name": "symfony/class-loader",
@@ -5349,12 +5329,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:ucdavis/sitefarm_seed.git",
-                "reference": "f0ee062c9560ae0076db6e65de6d7541dc63878f"
+                "reference": "2279c604ce5e991f3430ec2849e91013b424742a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ucdavis/sitefarm_seed/zipball/f0ee062c9560ae0076db6e65de6d7541dc63878f",
-                "reference": "f0ee062c9560ae0076db6e65de6d7541dc63878f",
+                "url": "https://api.github.com/repos/ucdavis/sitefarm_seed/zipball/2279c604ce5e991f3430ec2849e91013b424742a",
+                "reference": "2279c604ce5e991f3430ec2849e91013b424742a",
                 "shasum": ""
             },
             "require": {
@@ -5425,9 +5405,6 @@
                         "Profile Inheritance": "https://www.drupal.org/files/issues/1356276-319.patch",
                         "multiple image upload dimension fix": "https://www.drupal.org/files/issues/multiple_upload_at_once-2644468-66.patch"
                     },
-                    "drupal/better_normalizers": {
-                        "Get rid of rest dependency after 8.3 core released": "https://www.drupal.org/files/issues/get_rid_of_rest-2851712-2.patch"
-                    },
                     "drupal/photoswipe": {
                         "php error: Render context is empty": "https://www.drupal.org/files/issues/render_context_empty-2824022-4.patch"
                     },
@@ -5474,7 +5451,7 @@
                 "issues": "https://github.com/ucdavis/sitefarm-seed/issues",
                 "source": "https://github.com/ucdavis/sitefarm-seed"
             },
-            "time": "2017-05-08 21:01:48"
+            "time": "2017-05-09 21:26:45"
         },
         {
             "name": "zendframework/zend-diactoros",
