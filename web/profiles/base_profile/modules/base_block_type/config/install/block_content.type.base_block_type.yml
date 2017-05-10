@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: base_block_type
+label: 'Base Block Type'
+revision: 0
+description: ''

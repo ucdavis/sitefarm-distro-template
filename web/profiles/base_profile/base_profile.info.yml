@@ -23,6 +23,7 @@ dependencies:
   - file
   # Custom
   - base_content_type
+  - base_block_type
 
 themes:
   - stark

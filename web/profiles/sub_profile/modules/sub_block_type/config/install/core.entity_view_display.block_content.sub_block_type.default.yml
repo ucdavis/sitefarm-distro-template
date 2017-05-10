@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.sub_block_type
+    - field.field.block_content.sub_block_type.body
+    - field.field.block_content.sub_block_type.field_test_field
+  module:
+    - text
+id: block_content.sub_block_type.default
+targetEntityType: block_content
+bundle: sub_block_type
+mode: default
+content:
+  body:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_test_field:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

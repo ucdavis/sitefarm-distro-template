@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: sub_block_type
+label: 'Sub Block Type'
+revision: 0
+description: ''

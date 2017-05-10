@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.sub_block_type
+    - field.storage.block_content.field_test_field
+id: block_content.sub_block_type.field_test_field
+field_name: field_test_field
+entity_type: block_content
+bundle: sub_block_type
+label: 'Test Field'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

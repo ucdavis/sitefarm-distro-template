@@ -1,0 +1,8 @@
+name: 'Sub Block Type'
+type: module
+core: 8.x
+dependencies:
+  - base_block_type
+  - block_content
+  - field
+  - text

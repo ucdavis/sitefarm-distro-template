@@ -8,3 +8,4 @@ base profile: base_profile
 
 dependencies:
   - sub_content_type
+  - sub_block_type
