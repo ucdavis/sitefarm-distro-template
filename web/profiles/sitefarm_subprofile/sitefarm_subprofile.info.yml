@@ -5,8 +5,8 @@ description: 'A fast and feature-rich UC Davis Drupal distribution. A sub-profil
 core: 8.x
 
 # Force the installation of this profile since it is a distribution
-distribution:
-  name: SiteFarm
+#distribution:
+#  name: SiteFarm
 
 # Base profile
 base profile: sitefarm_seed

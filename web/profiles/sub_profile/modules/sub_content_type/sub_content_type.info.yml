@@ -1,0 +1,11 @@
+name: 'Sub Content Type'
+description: 'Provides Sub Content Type content type and related configuration. This will reuse the test field'
+type: module
+core: 8.x
+dependencies:
+  - base_content_type
+  - field
+  - menu_ui
+  - node
+  - path
+  - user

@@ -1,0 +1,11 @@
+name: 'Base Content Type'
+description: 'Provides Base Content Type content type and related configuration. '
+type: module
+core: 8.x
+dependencies:
+  - field
+  - menu_ui
+  - node
+  - path
+  - text
+  - user

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_test_field
+    - node.type.sub_content_type
+id: node.sub_content_type.field_test_field
+field_name: field_test_field
+entity_type: node
+bundle: sub_content_type
+label: 'Test Field'
+description: 'This is a reuse of the base test field.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
