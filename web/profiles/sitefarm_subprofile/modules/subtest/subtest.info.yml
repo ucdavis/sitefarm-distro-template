@@ -1,0 +1,12 @@
+name: Subtest
+description: 'Provides Subtest content type and related configuration. '
+type: module
+core: 8.x
+dependencies:
+  - field
+  - menu_ui
+  - node
+  - path
+  - sitefarm_core
+  - text
+  - user

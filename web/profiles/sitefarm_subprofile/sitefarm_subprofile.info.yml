@@ -12,10 +12,8 @@ distribution:
 base profile: sitefarm_seed
 
 # Required modules
-# dependencies:
-  # core
-  # contrib
-  # SiteFarm
+dependencies:
+  - subtest
 
 themes:
   - seven
