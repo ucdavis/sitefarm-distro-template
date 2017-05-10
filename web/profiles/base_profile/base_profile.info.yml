@@ -9,6 +9,7 @@ dependencies:
   - config
   - menu_link_content
   - datetime
+  - help
   - image
   - menu_ui
   - options
