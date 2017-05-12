@@ -1447,7 +1447,7 @@
             "extra": {
                 "patches_applied": {
                     "datetime-range views enhancements": "https://www.drupal.org/files/issues/improve_the_views-2786577-28.patch",
-                    "Profile Inheritance": "https://www.drupal.org/files/issues/1356276-319.patch",
+                    "Profile Inheritance": "https://www.drupal.org/files/issues/1356276-327-8.4.x.patch",
                     "multiple image upload dimension fix": "https://www.drupal.org/files/issues/multiple_upload_at_once-2644468-66.patch"
                 }
             },
@@ -2476,7 +2476,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.0-beta1",
-                    "datestamp": "1476307739"
+                    "datestamp": "1494450485"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2581,7 +2581,7 @@
                 },
                 "drupal": {
                     "version": "8.x-3.0-beta1",
-                    "datestamp": "1476313439"
+                    "datestamp": "1494450485"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5329,12 +5329,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:ucdavis/sitefarm_seed.git",
-                "reference": "2279c604ce5e991f3430ec2849e91013b424742a"
+                "reference": "0c12f4d38dd063cb4d92fa5c6c781575971c29ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ucdavis/sitefarm_seed/zipball/2279c604ce5e991f3430ec2849e91013b424742a",
-                "reference": "2279c604ce5e991f3430ec2849e91013b424742a",
+                "url": "https://api.github.com/repos/ucdavis/sitefarm_seed/zipball/0c12f4d38dd063cb4d92fa5c6c781575971c29ed",
+                "reference": "0c12f4d38dd063cb4d92fa5c6c781575971c29ed",
                 "shasum": ""
             },
             "require": {
@@ -5402,7 +5402,7 @@
                 "patches": {
                     "drupal/core": {
                         "datetime-range views enhancements": "https://www.drupal.org/files/issues/improve_the_views-2786577-28.patch",
-                        "Profile Inheritance": "https://www.drupal.org/files/issues/1356276-319.patch",
+                        "Profile Inheritance": "https://www.drupal.org/files/issues/1356276-327-8.4.x.patch",
                         "multiple image upload dimension fix": "https://www.drupal.org/files/issues/multiple_upload_at_once-2644468-66.patch"
                     },
                     "drupal/photoswipe": {
@@ -5451,7 +5451,7 @@
                 "issues": "https://github.com/ucdavis/sitefarm-seed/issues",
                 "source": "https://github.com/ucdavis/sitefarm-seed"
             },
-            "time": "2017-05-09 21:26:45"
+            "time": "2017-05-12 20:56:09"
         },
         {
             "name": "zendframework/zend-diactoros",
@@ -8095,16 +8095,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.3",
+            "version": "v0.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e"
+                "reference": "17cf432bb80d9198df239b80d00a29155bd74d82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e",
-                "reference": "1dd4bbbc64d71e7ec075ffe82b42d9e096dc8d5e",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/17cf432bb80d9198df239b80d00a29155bd74d82",
+                "reference": "17cf432bb80d9198df239b80d00a29155bd74d82",
                 "shasum": ""
             },
             "require": {
@@ -8164,7 +8164,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-03-19T21:40:44+00:00"
+            "time": "2017-05-12T15:41:55+00:00"
         },
         {
             "name": "sebastian/comparator",
