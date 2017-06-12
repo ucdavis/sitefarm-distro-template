@@ -57,12 +57,10 @@
     "post-install-cmd": [
       "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
       "cp -a web/profiles/sitefarm_seed/libraries/. web/libraries/"
-//      "cp -a web/profiles/sitefarm_subprofile/libraries/. web/libraries/"
     ],
     "post-update-cmd": [
       "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
       "cp -a web/profiles/sitefarm_seed/libraries/. web/libraries/"
-//      "cp -a web/profiles/sitefarm_subprofile/libraries/. web/libraries/"
     ]
   },
   "config": {
