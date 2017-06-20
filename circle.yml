@@ -57,7 +57,7 @@ dependencies:
     - terminus auth:login -n --machine-token="$TERMINUS_TOKEN"
     - php -f scripts/slack/slack_notify.php pantheon_create "${TERMINUS_ENV}" "${BRANCH}"
     - terminus build-env:delete:ci -n "$TERMINUS_SITE" --keep=2 --yes
-    - composer -n build-assets
+    #- composer -n build-assets
     - terminus env:wake -n "$TERMINUS_SITE.dev"
     - terminus build-env:create -n "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes $CLONE_CONTENT_FLAG --notify="$NOTIFY"
     - |
