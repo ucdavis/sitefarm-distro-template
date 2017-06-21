@@ -50,9 +50,9 @@ dependencies:
     - composer global require "drush/drush:~8"
     - composer install --ansi
   post:
-    - ls web/sites/default
-    - drush site-install sitefarm_seed --root=/home/ubuntu/sitefarm-distro-template/web --yes --site-name="$TEST_SITE_NAME" --account-mail="$ADMIN_EMAIL" --account-pass="$ADMIN_PASSWORD"
+    - cp web/sites/default/default.settings.php web/sites/default/settings.php
     - chmod +w web/sites/default web/sites/default/settings.php
+    - drush site-install sitefarm_seed --root=/home/ubuntu/sitefarm-distro-template/web --yes --site-name="$TEST_SITE_NAME" --account-mail="$ADMIN_EMAIL" --account-pass="$ADMIN_PASSWORD"
 test:
   override:
      - run-behat
