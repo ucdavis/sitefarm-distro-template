@@ -50,7 +50,7 @@ dependencies:
     - composer global require "drush/drush:~8"
     - composer install --ansi
   post:
-    - drush site-install sitefarm_seed --root=web --yes --site-name="$TEST_SITE_NAME" --account-mail="$ADMIN_EMAIL" --account-pass="$ADMIN_PASSWORD"
+    - drush site-install sitefarm_seed --root=/home/ubuntu/sitefarm-distro-template/web --yes --site-name="$TEST_SITE_NAME" --account-mail="$ADMIN_EMAIL" --account-pass="$ADMIN_PASSWORD"
     - chmod +w web/sites/default web/sites/default/settings.php
 test:
   override:
