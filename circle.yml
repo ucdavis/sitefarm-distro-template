@@ -1,60 +1,21 @@
-# https://circleci.com/docs/configuration#machine
 machine:
-  timezone:
-    America/Chicago
-  php:
-    # https://circleci.com/docs/build-image-trusty/#php
-    version: 7.0.11
-  environment:
-    # In addition to the environment variables defined in this file, also
-    # add the following variables in the Circle CI UI.
-    #
-    # See: https://circleci.com/docs/1.0/environment-variables/
-    #
-    # TERMINUS_SITE:  Name of the Pantheon site to run tests on, e.g. my_site
-    # TERMINUS_TOKEN: The Pantheon machine token
-    # GITHUB_TOKEN:   The GitHub personal access token
-    # GIT_EMAIL:      The email address to use when making commits
-    #
-    # TEST_SITE_NAME: The name of the test site to provide when installing.
-    # ADMIN_PASSWORD: The admin password to use when installing.
-    # ADMIN_EMAIL:    The email address to give the admin when installing.
-    #
-    # CLONE_CONTENT:  If defined, tests will use content cloned from the dev
-    #                 environment. Otherwise, the site will be re-installed
-    #                 for every test.
-    #
-    # The variables below usually do not need to be modified.
-    BRANCH: $(echo $CIRCLE_BRANCH | grep -v '^\(master\|[0-9]\+.x\)$')
-    PR_ENV: ${BRANCH:+pr-$BRANCH}
-    CIRCLE_ENV: ci-$CIRCLE_BUILD_NUM
-    DEFAULT_ENV: $(echo ${PR_ENV:-$CIRCLE_ENV} | cut -c -11 | sed 's/_/-/g' | sed 's/-$//')
-    TERMINUS_ENV: ${TERMINUS_ENV:-$DEFAULT_ENV}
-    CLONE_CONTENT_FLAG: ${CLONE_CONTENT:+--clone-content --db-only}
-    NOTIFY: 'scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}'
-    PATH: $PATH:~/.composer/vendor/bin:~/.config/composer/vendor/bin:tests/scripts
-
-dependencies:
-  cache_directories:
-    - ~/.composer/cache
   pre:
-    #- echo "Begin build for $CIRCLE_ENV${PR_ENV:+ for }$PR_ENV. Pantheon test environment is $TERMINUS_SITE.$TERMINUS_ENV"
-    #- php -f scripts/slack/slack_notify.php circle_start "${CIRCLE_BUILD_NUM}" "${TERMINUS_SITE}.${TERMINUS_ENV}"
-    - |
-      if [ -n "$GITHUB_TOKEN" ] ; then
-        composer config --global github-oauth.github.com $GITHUB_TOKEN
-      fi
-    - git config --global user.email "$GIT_EMAIL"
-    - git config --global user.name "Circle CI"
+    - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
+  services:
+    - docker
+dependencies:
+  pre:
+    - rm /opt/circleci/php/$(phpenv global)/etc/conf.d/xdebug.ini
   override:
-    - composer global require "hirak/prestissimo:^0.3"
-    - composer global require "drush/drush:~8"
-    - composer install --ansi
-  post:
-    - cp web/sites/default/default.settings.php web/sites/default/settings.php
-    - chmod +w web/sites/default web/sites/default/settings.php
-    - cd web && drush
-    - cd web && drush site-install sitefarm_seed --root=/home/ubuntu/sitefarm-distro-template/web --yes --site-name="$TEST_SITE_NAME" --account-mail="$ADMIN_EMAIL" --account-pass="$ADMIN_PASSWORD" --db-url=mysql://ubuntu:@localhost:circle_test
+    - sudo pip install docker-compose
+    - docker-compose up -d mariadb
+    - docker-compose up -d nginx
 test:
+  pre:
+    - composer global require "hirak/prestissimo:^0.3"
+    - composer require "wikimedia/composer-merge-plugin:~1.3" --no-interaction
+    - composer update -n
+    - composer update -n -d ./scripts
+    - sudo chown -R 82:82 .
   override:
-     - run-behat
+    - run-behat
