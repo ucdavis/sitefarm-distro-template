@@ -47,7 +47,7 @@ dependencies:
     - git config --global user.email "$GIT_EMAIL"
     - git config --global user.name "Circle CI"
   override:
-    - composer self-update ; composer global update
+    - composer self-update
     - composer global require "drush/drush:~8"
     - composer install --ansi
   post:
