@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6df6ba5722001dad0997d3b63882f0fe",
+    "content-hash": "220ae6108bb95e7f5cc5c3cacb3c7588",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1061,6 +1061,53 @@
                 "source": "http://cgit.drupalcode.org/better_normalizers"
             },
             "time": "2017-05-03 02:35:27"
+        },
+        {
+            "name": "drupal/block_style_plugins",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/block_style_plugins",
+                "reference": "8.x-1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/block_style_plugins-8.x-1.0.zip",
+                "reference": null,
+                "shasum": "a0d81305f6c5fa6c8320d108939036e60a699bd2"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.0",
+                    "datestamp": "1500532742"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "segovia94",
+                    "homepage": "https://www.drupal.org/user/780142"
+                }
+            ],
+            "description": "Plugin system for allowing modules or themes to add style configuration to blocks",
+            "homepage": "https://www.drupal.org/project/block_style_plugins",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/block_style_plugins",
+                "issues": "https://www.drupal.org/project/issues/block_style_plugins"
+            }
         },
         {
             "name": "drupal/ckwordcount",
@@ -4776,6 +4823,7 @@
                 "drupal/address": "1.*",
                 "drupal/anchor_link": "1.*",
                 "drupal/better_normalizers": "dev-1.x",
+                "drupal/block_style_plugins": "1.*",
                 "drupal/ckwordcount": "1.*",
                 "drupal/config_update": "1.*",
                 "drupal/crop": "1.*",
