@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "220ae6108bb95e7f5cc5c3cacb3c7588",
+    "content-hash": "6df6ba5722001dad0997d3b63882f0fe",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1073,7 +1073,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/block_style_plugins-8.x-1.0.zip",
-                "reference": null,
+                "reference": "8.x-1.0",
                 "shasum": "a0d81305f6c5fa6c8320d108939036e60a699bd2"
             },
             "require": {
@@ -4809,12 +4809,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:ucdavis/sitefarm_seed.git",
-                "reference": "df513de3625843820b58510fd5ecb3ece5fe9f91"
+                "reference": "48075cc5e90640c8ffd6c97f7fbbca23770adac2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ucdavis/sitefarm_seed/zipball/df513de3625843820b58510fd5ecb3ece5fe9f91",
-                "reference": "df513de3625843820b58510fd5ecb3ece5fe9f91",
+                "url": "https://api.github.com/repos/ucdavis/sitefarm_seed/zipball/48075cc5e90640c8ffd6c97f7fbbca23770adac2",
+                "reference": "48075cc5e90640c8ffd6c97f7fbbca23770adac2",
                 "shasum": ""
             },
             "require": {
@@ -4922,7 +4922,7 @@
                 "issues": "https://github.com/ucdavis/sitefarm-seed/issues",
                 "source": "https://github.com/ucdavis/sitefarm-seed"
             },
-            "time": "2017-06-12 19:25:46"
+            "time": "2017-07-24 19:50:41"
         },
         {
             "name": "zendframework/zend-diactoros",
