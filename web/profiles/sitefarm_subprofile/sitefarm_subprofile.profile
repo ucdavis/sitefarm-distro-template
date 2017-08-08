@@ -13,6 +13,7 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function sitefarm_subprofile_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
   // Fetch Helper services
+  /** @var \Drupal\sitefarm_seed\ProfileInstall $helper */
   $helper = \Drupal::service('sitefarm_seed.profile_install');
 
   // Hide some messages from various modules that are just too chatty.
