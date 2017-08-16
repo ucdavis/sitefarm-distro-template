@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+#-------------------------- Settings --------------------------------
+
+# PROJECT_ROOT is passed from fin.
+# The following variables are configured in the '.env' file: DOCROOT, VIRTUAL_HOST.
+
+SITE_DIRECTORY="default"
+DOCROOT_PATH="${PROJECT_ROOT}/${DOCROOT}"
+SITEDIR_PATH="${DOCROOT_PATH}/sites/${SITE_DIRECTORY}"
+
+#-------------------------- END: Settings --------------------------------
+
+# Set docksal-local.env
+cp $PROJECT_ROOT/.docksal/example.docksal-local.env $PROJECT_ROOT/.docksal/docksal-local.env
+# Start containers
+fin up
+# Install
+fin exec composer install
+# Set local config files
+cp $SITEDIR_PATH/default.settings.php $SITEDIR_PATH/settings.php
+cp $SITEDIR_PATH/default.settings.local.php $SITEDIR_PATH/settings.local.php
+cp $SITEDIR_PATH/default.services.local.yml $SITEDIR_PATH/services.local.yml
+# Set extra config
+echo "
+
+ if (file_exists(\$app_root . '/' . \$site_path . '/settings.local.php')) {
+   include \$app_root . '/' . \$site_path . '/settings.local.php';
+ }
+" >> $SITEDIR_PATH/settings.php
+echo "
+\$databases['default']['default'] = array (
+  'database' => 'default',
+  'username' => 'user',
+  'password' => 'user',
+  'prefix' => '',
+  'host' => '$(fin vm ip)',
+  'port' => '33062',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+" >> $SITEDIR_PATH/settings.local.php
+# Set hosts
+fin hosts remove $VIRTUAL_HOST
+fin hosts add $VIRTUAL_HOST
+# Install site
+cd $DOCROOT
+fin drush site-install sitefarm_subprofile -y --site-name="SiteFarm Distro"
+# Get login link
+fin drush uli --uri="http://$VIRTUAL_HOST"
+# Set permissions
+sudo chmod 755 $SITEDIR_PATH
