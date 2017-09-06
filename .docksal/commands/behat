@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+## Run project's Behat tests.
+##
+## Usage: fin behat [--path=path] [arguments]
+##
+## path defaults to tests/behat
+
+# Environment variables passed from fin:
+#
+#   $PROJECT_ROOT - (string) absolute path to NEAREST .docksal folder
+#   $VIRTUAL_HOST - (string) ex. projectname.docksal
+#   $DOCROOT - name of the docroot folder
+#   $DOCKER_RUNNING - (string) "true" or "false"
+
+DOCROOT_PATH="${PROJECT_ROOT}/${DOCROOT}"
+SITEDIR_PATH="${DOCROOT_PATH}/sites/${SITE_DIRECTORY}"
+BEHAT_PATH="${DOCROOT_PATH}/profiles/sitefarm_seed"
+FIN_BEHAT_PATH="/var/www/web/profiles/sitefarm_seed"
+
+if [[ ! -f "$BEHAT_PATH/behat.yml" ]]; then
+	echo "Could not find behat.yml. Creating..."
+	cp $BEHAT_PATH/behat.template.yml $BEHAT_PATH/behat.yml
+fi
+
+# Launch Behat tests
+fin exec "cd $FIN_BEHAT_PATH ; /var/www/vendor/bin/behat -p docker $1"
