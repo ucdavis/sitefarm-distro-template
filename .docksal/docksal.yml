@@ -26,7 +26,12 @@ services:
   # Browser
   browser:
     hostname: browser
-    image: selenium/standalone-chrome
+    image: selenium/standalone-chrome-debug
+    volumes:
+      # Project root volume
+      - project_root:/var/www:ro,nocopy
+    ports:
+      - "${VNC_PORT_MAPPING:-5900}"
     dns:
       - ${DOCKSAL_DNS1}
       - ${DOCKSAL_DNS2}
