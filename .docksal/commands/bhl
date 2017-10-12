@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Runs behat on only @local tagged items.
+##
+## Usage: fin bhl
+
+fin behat --tags=@local

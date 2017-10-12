@@ -1,0 +1,37 @@
+# Basic LAMP stack
+
+version: "2.1"
+
+services:
+  # Web
+  web:
+    extends:
+      file: ${HOME}/.docksal/stacks/services.yml
+      service: web
+    depends_on:
+      - cli
+
+  # DB
+  db:
+    extends:
+      file: ${HOME}/.docksal/stacks/services.yml
+      service: db
+
+  # CLI
+  cli:
+    extends:
+      file: ${HOME}/.docksal/stacks/services.yml
+      service: cli
+
+  # Browser
+  browser:
+    hostname: browser
+    image: selenium/standalone-chrome-debug
+    volumes:
+      # Project root volume
+      - project_root:/var/www:ro,nocopy
+    ports:
+      - "${VNC_PORT_MAPPING:-5900}"
+    dns:
+      - ${DOCKSAL_DNS1}
+      - ${DOCKSAL_DNS2}
