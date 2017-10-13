@@ -47,11 +47,6 @@
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
-    },
-    "ucdavis/sitefarm_seed": {
-      "type": "vcs",
-      "no-api": true,
-      "url": "git@github.com:ucdavis/sitefarm_seed.git"
     }
   },
   "scripts": {
