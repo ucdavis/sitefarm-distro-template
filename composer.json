@@ -1,101 +1,101 @@
 {
-  "name": "ucdavis/sitefarm-distro-template",
-  "description": "Drupal 8 SiteFarm distribution template.",
-  "type": "project",
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "Regents of the University of California",
-      "email": "copyright@ucdavis.edu",
-      "role": "Copyright Owner"
-    },
-    {
-      "name": "Shawn DeArmond",
-      "email": "sgdearmond@ucdavis.edu",
-      "role": "Developer"
-    },
-    {
-      "name": "Mark Miller",
-      "email": "mrkmiller@ucdavis.edu",
-      "role": "Developer"
-    }
-  ],
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "require-dev": {
-    "behat/behat": "^3.1",
-    "drupal/drupal-extension": "^3.1",
-    "drush/drush": "8.*",
-    "behat/mink": "~1.6",
-    "behat/mink-goutte-driver": "~1.2",
-    "behat/mink-extension": "*",
-    "behat/mink-selenium2-driver": "*",
-    "jcalderonzumba/gastonjs": "~1.0.2",
-    "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
-    "mikey179/vfsStream": "~1.2",
-    "phpunit/phpunit": "~4.8",
-    "drupal/console": "~1.0"
-  },
-  "require": {
-    "composer/installers": "^1.0",
-    "oomphinc/composer-installers-extender": "^1.1",
-    "drupal-composer/drupal-scaffold": "^2.2",
-    "zendframework/zend-stdlib": "~3.0.1",
-    "cweagans/composer-patches": "^1.5",
-    "ucdavis/sitefarm_seed": "dev-8.x-1.x"
-  },
-  "repositories": {
-    "drupal": {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    }
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-      "cp -a web/profiles/sitefarm_seed/libraries/. web/libraries/"
+    "name": "ucdavis/sitefarm-distro-template",
+    "description": "Drupal 8 SiteFarm distribution template.",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Regents of the University of California",
+            "email": "copyright@ucdavis.edu",
+            "role": "Copyright Owner"
+        },
+        {
+            "name": "Shawn DeArmond",
+            "email": "sgdearmond@ucdavis.edu",
+            "role": "Developer"
+        },
+        {
+            "name": "Mark Miller",
+            "email": "mrkmiller@ucdavis.edu",
+            "role": "Developer"
+        }
     ],
-    "post-update-cmd": [
-      "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-      "cp -a web/profiles/sitefarm_seed/libraries/. web/libraries/"
-    ]
-  },
-  "config": {
-    "preferred-install": {
-      "drupal/*": "dist"
-    }
-  },
-  "extra": {
-    "installer-types": [
-      "drupal-custom-module",
-      "drupal-custom-theme"
-    ],
-    "installer-paths": {
-      "web/core": [
-        "drupal/core"
-      ],
-      "web/modules/contrib/{$name}": [
-        "type:drupal-module"
-      ],
-      "web/modules/custom/{$name}": [
-        "type:drupal-custom-module"
-      ],
-      "web/profiles/{$name}": [
-        "type:drupal-profile"
-      ],
-      "web/libraries/{$name}": [
-        "type:drupal-library"
-      ],
-      "web/themes/contrib/{$name}": [
-        "type:drupal-theme"
-      ],
-      "web/themes/custom/{$name}": [
-        "type:drupal-custom-theme"
-      ],
-      "drush/contrib/{$name}": [
-        "type:drupal-drush"
-      ]
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "behat/behat": "^3.1",
+        "drupal/drupal-extension": "^3.1",
+        "drush/drush": "8.*",
+        "behat/mink": "~1.6",
+        "behat/mink-goutte-driver": "~1.2",
+        "behat/mink-extension": "*",
+        "behat/mink-selenium2-driver": "*",
+        "jcalderonzumba/gastonjs": "~1.0.2",
+        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
+        "mikey179/vfsStream": "~1.2",
+        "phpunit/phpunit": "~4.8",
+        "drupal/console": "~1.0"
     },
-    "enable-patching": true
-  }
+    "require": {
+        "composer/installers": "^1.0",
+        "oomphinc/composer-installers-extender": "^1.1",
+        "drupal-composer/drupal-scaffold": "^2.2",
+        "zendframework/zend-stdlib": "~3.0.1",
+        "cweagans/composer-patches": "^1.5",
+        "ucdavis/sitefarm_seed": "dev-8.x-1.x"
+    },
+    "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+            "cp -a web/profiles/sitefarm_seed/libraries/. web/libraries/"
+        ],
+        "post-update-cmd": [
+            "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+            "cp -a web/profiles/sitefarm_seed/libraries/. web/libraries/"
+        ]
+    },
+    "config": {
+        "preferred-install": {
+            "drupal/*": "dist"
+        }
+    },
+    "extra": {
+        "installer-types": [
+          "drupal-custom-module",
+          "drupal-custom-theme"
+        ],
+        "installer-paths": {
+            "web/core": [
+                "drupal/core"
+            ],
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "web/modules/custom/{$name}": [
+                "type:drupal-custom-module"
+            ],
+            "web/profiles/{$name}": [
+                "type:drupal-profile"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "web/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "web/themes/custom/{$name}": [
+                "type:drupal-custom-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
+        },
+        "enable-patching": true
+    }
 }
