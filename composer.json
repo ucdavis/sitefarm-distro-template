@@ -37,7 +37,7 @@
         "drupal/console": "~1.0"
     },
     "require": {
-        "composer/installers": "^1.0",
+        "oomphinc/composer-installers-extender": "^1.1",
         "drupal-composer/drupal-scaffold": "^2.2",
         "zendframework/zend-stdlib": "~3.0.1",
         "cweagans/composer-patches": "^1.5",
@@ -65,6 +65,10 @@
         }
     },
     "extra": {
+        "installer-types": [
+          "drupal-custom-module",
+          "drupal-custom-theme"
+        ],
         "installer-paths": {
             "web/core": [
                 "drupal/core"
