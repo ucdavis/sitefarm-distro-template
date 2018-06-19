@@ -1,5 +1,11 @@
 This is a SiteFarm Composer-based Drupal distribution template.
 
+## How to Use this Template
+This template is meant only as a starting point for building your own distribution using SiteFarm Seed. It is not meant to be used as-is.
+The composer.json file can and should be altered to add in your own modules/packages. For example, if you need a specific version of Drupal core you can add that here as a required package. In addition, you can add your own patches or override patches from SiteFarm Seed https://github.com/cweagans/composer-patches#ignoring-patches.
+
+To create your own subprofile you can follow these directions: https://github.com/ucdavis/sitefarm_seed/blob/8.x-1.x/docs/creating_subprofile.md.
+
 ## Get Started
 You will need the following installed:
 
