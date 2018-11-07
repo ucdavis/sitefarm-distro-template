@@ -33,7 +33,7 @@
         "jcalderonzumba/gastonjs": "~1.0.2",
         "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
         "mikey179/vfsStream": "~1.2",
-        "phpunit/phpunit": "~4.8",
+        "phpunit/phpunit": "^6.5",
         "drupal/console": "~1.0"
     },
     "require": {

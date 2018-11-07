@@ -10,7 +10,7 @@ steps:
       - composer self-update ; composer global update
       - cd /src
       - composer install --ansi
-      - if [ $(git ls-remote --heads git@github.com:ucdavis/sitefarm_seed.git $BRANCH_NAME | wc -l) = 1 ]; then BRANCH="$BRANCH_NAME"; else BRANCH=8.x-1.x; fi
+      - if [ $(git ls-remote --heads https://github.com/ucdavis/sitefarm_seed.git $BRANCH_NAME | wc -l) = 1 ]; then BRANCH="$BRANCH_NAME"; else BRANCH=8.x-1.x; fi
       - composer require "ucdavis/sitefarm_seed:dev-$BRANCH" --ansi
   - name: Drupal site setup
     plugin: Drupal
