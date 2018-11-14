@@ -1,4 +1,4 @@
-This is a SiteFarm Composer-based Drupal distribution template.
+This is a Composer-based Drupal distribution template for the [SiteFarm Seed Base Profile](https://github.com/ucdavis/sitefarm_seed).
 
 ## How to Use this Template
 This template is meant only as a starting point for building your own distribution using SiteFarm Seed. It is not meant to be used as-is.
@@ -15,7 +15,7 @@ When you have that, run this command:
 ```
 $ composer install
 ```
-Composer will download and install the SiteFarm install profile. You can then install it like you would any other Drupal site.
+Composer will download and install the [SiteFarm Seed](https://github.com/ucdavis/sitefarm_seed) install profile. You can then install it like you would any other Drupal site.
 
 ## Updating Drupal Core
 
