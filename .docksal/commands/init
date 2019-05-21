@@ -16,7 +16,8 @@ cp $PROJECT_ROOT/.docksal/example.docksal-local.env $PROJECT_ROOT/.docksal/docks
 # Start containers
 fin up
 # Install
-fin exec composer install
+COMPOSER_MEMORY_LIMIT=-1
+fin composer install
 # Set local config files
 cp $SITEDIR_PATH/default.settings.php $SITEDIR_PATH/settings.php
 cp $SITEDIR_PATH/default.settings.local.php $SITEDIR_PATH/settings.local.php
@@ -34,8 +35,8 @@ echo "
   'username' => 'user',
   'password' => 'user',
   'prefix' => '',
-  'host' => '$(fin vm ip)',
-  'port' => '33062',
+  'host' => 'db',
+  'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
