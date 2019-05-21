@@ -3,26 +3,6 @@
 version: "2.1"
 
 services:
-  # Web
-  web:
-    extends:
-      file: ${HOME}/.docksal/stacks/services.yml
-      service: web
-    depends_on:
-      - cli
-
-  # DB
-  db:
-    extends:
-      file: ${HOME}/.docksal/stacks/services.yml
-      service: db
-
-  # CLI
-  cli:
-    extends:
-      file: ${HOME}/.docksal/stacks/services.yml
-      service: cli
-
   # Browser
   browser:
     hostname: browser
